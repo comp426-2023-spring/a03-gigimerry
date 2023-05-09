@@ -32,3 +32,4 @@ if (argv.r || argv.rules){
     process.exit(0);
 
 }
+
