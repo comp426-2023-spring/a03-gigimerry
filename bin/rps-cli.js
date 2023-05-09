@@ -33,7 +33,6 @@ if (argv.r || argv.rules){
 
 }
 
-let shot = args._[0];
 
 if (args.h || args.help) {
 	console.log(help);
@@ -53,8 +52,8 @@ if (args._.length === 0) {
 
 
 try {
-    let ans = rps(arg);
-    console.log(JSON.stringify(result));
+    let answer = rps(arg);
+    console.log(JSON.stringify(answer));
 } catch (e) {
     console.log(help);
     console.log(rules);
