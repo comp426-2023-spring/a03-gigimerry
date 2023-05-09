@@ -19,3 +19,4 @@ if(args.h || args.help) {
     );
 	process.exit(0);
 }
+
