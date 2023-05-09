@@ -46,3 +46,10 @@ if (args.r || args.rules) {
 }
 
 
+if (args._.length === 0) {
+    console.log(JSON.stringify(rps()));
+    process.exit(0);
+  }
+
+
+const result = rps(args._[0]);
