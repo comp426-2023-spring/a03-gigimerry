@@ -22,3 +22,11 @@ if(args.h || args.help) {
 
 // the rules
 
+if (argv.r || argv.rules){
+    console.log(`Rules for Rock Paper Scissors:
+    - Scissors CUTS Paper
+    - Paper COVERS Rock
+    - Rock CRUSHES Scissors`);
+    process.exit(0);
+
+}
