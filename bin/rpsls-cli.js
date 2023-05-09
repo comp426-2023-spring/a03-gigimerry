@@ -17,7 +17,9 @@ export function rps(shot) {
     if (opp === play) {
         result = "tie"
     }
-    else if (play === "rock" && opp === "scissors" || play === "scissors" && opp === "paper" || play === "paper" && opp === "rock") {
+    else if (play === "rock" && opp === "scissors" || 
+        play === "scissors" && opp === "paper" || 
+        play === "paper" && opp === "rock") {
         result = "win"
     }
     else {
