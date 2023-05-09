@@ -44,3 +44,5 @@ if (args.r || args.rules) {
     console.log(rules);
 	process.exit(0);
 }
+
+
