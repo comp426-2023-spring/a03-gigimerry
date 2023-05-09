@@ -2,7 +2,6 @@
 
 import { rpsls } from "../lib/rpsls.js";
 import minimist from 'minimist';
-
 var args = minimist(process.argv.slice(2));
 
 const help = `Usage: node-rpsls [SHOT]
@@ -37,11 +36,11 @@ if (args.r || args.rules) {
 	process.exit(0);
 }
 
-let arg = args._[0];
+let shot = args._[0];
 
 try {
-    let ans = rps(arg);
-    console.log(JSON.stringify(ans));
+    let result = rpsls(shot);
+    console.log(JSON.stringify(result));
 } catch (e) {
     console.log(help);
     console.log(rules);

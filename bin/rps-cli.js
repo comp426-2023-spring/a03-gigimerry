@@ -32,11 +32,11 @@ if (args.r || args.rules) {
 	process.exit(0);
 }
 
-let arg = args._[0];
+let shot = args._[0];
 
 try {
-    let shot = rps(arg);
-    console.log(JSON.stringify(shot));
+    let result = rps(shot);
+    console.log(JSON.stringify(result));
 } catch (e) {
     console.log(help);
     console.log(rules);
