@@ -8,21 +8,20 @@
     },
     "repository": {
       "type": "git",
-      "url": "git+https://github.com/comp426-2023-spring/a03-deysim.git"
+      "url": "git+https://github.com/comp426-2023-spring/a03-gigimerry.git"
     },
-    "author": "deysim",
+    "author": "gigimerry",
     "license": "MIT",
     "bugs": {
-      "url": "https://github.com/comp426-2023-spring/a03-deysim/issues"
+      "url": "https://github.com/comp426-2023-spring/a03-gigimerry/issues"
     },
     "bin": {
       "node-rps": "./bin/rps-cli.js",
       "node-rpsls": "./bin/rpsls-cli.js"
     },
-    "homepage": "https://github.com/comp426-2023-spring/a03-deysim#readme",
+    "homepage": "https://github.com/comp426-2023-spring/a03-gigimerry#readme",
     "dependencies": {
       "minimist": "^1.2.8"
     },
     "type": "module"
   }
-  
