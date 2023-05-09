@@ -38,3 +38,13 @@ if (args.r || args.rules) {
     console.log(rules);
       process.exit(0);
   }
+
+  let arg = args._[0];
+
+  try {
+      let answer = rps(arg);
+      console.log(JSON.stringify(answer));
+  } catch (e) {
+      console.log(help);
+      console.log(rules);
+  }
