@@ -27,3 +27,9 @@ const rules = `Rules for the Lizard-Spock Expansion of Rock Paper Scissors:
 - Paper DISPROVES Spock
 - Spock VAPORIZES Rock
 - Rock CRUSHES Scissors`;
+
+
+if (args.h || args.help) {
+	console.log(help);
+	process.exit(0);
+}
