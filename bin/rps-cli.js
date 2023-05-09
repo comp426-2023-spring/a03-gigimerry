@@ -52,4 +52,10 @@ if (args._.length === 0) {
   }
 
 
-const result = rps(args._[0]);
+try {
+    let ans = rps(arg);
+    console.log(JSON.stringify(result));
+} catch (e) {
+    console.log(help);
+    console.log(rules);
+}
