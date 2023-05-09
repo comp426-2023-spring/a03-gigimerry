@@ -1,50 +1,72 @@
-#!/usr/bin/env node
+export function rps(shot) {
+    const moves = ["rock", "paper", "scissors"]
+    let opp = moves[Math.floor(Math.random() * moves.length)]
+    let result = ""
 
-import { rpsls } from "../lib/rpsls.js";
-import minimist from 'minimist';
+    if (shot === undefined) {
+        return {player: opp};
+    }
+    
+    let play = shot.toLowerCase();
 
-var args = minimist(process.argv.slice(2));
+    if (!moves.includes(play)) {
+        console.error(`${shot} is out of range.`);
+        throw new RangeError();
+    }
 
-const help = `Usage: node-rpsls [SHOT]
-Play the Lizard-Spock Expansion of Rock Paper Scissors (RPSLS)!
-  -h, --help        display this help message and exit
-  -r, --rules       display the rules and exit
-Examples:
-  node-rpsls        Return JSON with single player RPSLS result.
-                    e.g. {"player":"rock"}
-  node-rpsls rock   Return JSON with results for RPSLS played against a simulated opponent.
-                    e.g {"player":"rock","opponent":"Spock","result":"lose"}`;
+    if (opp === play) {
+        result = "tie"
+    }
+    else if (play === "rock" && opp === "scissors" || play === "scissors" && opp === "paper" || play === "paper" && opp === "rock") {
+        result = "win"
+    }
+    else {
+        result = "lose"
+    }
 
-                    
-const rules = `Rules for the Lizard-Spock Expansion of Rock Paper Scissors:
-- Scissors CUTS Paper
-- Paper COVERS Rock
-- Rock SMOOSHES Lizard
-- Lizard POISONS Spock
-- Spock SMASHES Scissors
-- Scissors DECAPITATES Lizard
-- Lizard EATS Paper
-- Paper DISPROVES Spock
-- Spock VAPORIZES Rock
-- Rock CRUSHES Scissors`;
-
-
-if (args.h || args.help) {
-	console.log(help);
-	process.exit(0);
+    return { player: play,
+            opponent: opp,
+            result: result };
 }
 
-if (args.r || args.rules) {
-    console.log(rules);
-      process.exit(0);
-  }
+export function rpsls(shot) {
+    const moves = ["rock", "paper", "scissors", "lizard", "spock"]
+    let opp = moves[Math.floor(Math.random() * moves.length)]
+    let result = ""
 
-  let arg = args._[0];
+    if (shot === undefined) {
+        return {player: opp};
+    }
+    
+    let play = shot.toLowerCase();
 
-  try {
-      let answer = rps(arg);
-      console.log(JSON.stringify(answer));
-  } catch (e) {
-      console.log(help);
-      console.log(rules);
-  }
+    if (!moves.includes(play)) {
+        console.error(`${shot} is out of range.`);
+        throw new RangeError();
+    }
+
+    if (opp === play) {
+        result = "tie"
+    }
+    else if (play === "rock" && opp === "scissors" || 
+            play === "scissors" && opp === "paper" || 
+            play === "paper" && opp === "rock") {
+        result = "win"
+    }
+    else if (play === "rock" && opp === "lizard" || 
+            play === "lizard" && opp === "spock" || 
+            play === "spock" && opp === "scissors" || 
+            play === "scissors" && opp === "lizard" || 
+            play === "lizard" && opp === "paper" || 
+            play === "paper" && opp === "spock" || 
+            play === "spock" && opp === "rock") {
+        result = "win"
+    }
+    else {
+        result = "lose"
+    }
+
+    return { player: play,
+            opponent: opp,
+            result: result };
+}
